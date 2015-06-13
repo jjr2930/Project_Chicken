@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IGUIPointMngr : MonoBehaviour {
+public class IGUIPointMngr : MonoSingle<IGUIPointMngr> {
+    [SerializeField]
+    private UILabel _score;
+    [SerializeField]
+    private UILabel _cash;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    
+    void Update()
+    {
+        string temp = string.Format("Score:{0}", PlayerPrefs.GetInt(MACRO.KEY_STAGEPOINT));
+        _score.text = temp;
+
+        temp = string.Format("Cash:{0}", PlayerPrefs.GetInt(MACRO.KEY_CASH));
+        _cash.text = temp;
+    }
 }

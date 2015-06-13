@@ -3,15 +3,25 @@ using System.Collections;
 
 public class IGUIMngr : MonoSingle<IGUIMngr>
 {
-
-
     [SerializeField]
-    private UILabel _score;
-    [SerializeField]
-    private UILabel _cash;
+    IGUIPointMngr _pointMngr;
 
-    void Update()
+    protected override void OnInit()
     {
-
+        base.OnInit();
+        _pointMngr = GetComponentInChildren<IGUIPointMngr>();
     }
+
+    void OnGUI()
+    {
+        if (GUILayout.Button("reset"))
+        {
+            PlayerPrefs.SetInt(MACRO.KEY_CASH, 0);
+            PlayerPrefs.SetInt(MACRO.KEY_STAGEPOINT, 0);
+
+            PlayerPrefs.Save();
+        }
+    }
+
+   
 }
