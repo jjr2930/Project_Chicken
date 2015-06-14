@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class MonoSingle<T> : MonoBehaviour where T:MonoBehaviour
 {
-    static T Instance
+    static public T Instance
     {
         get
         {

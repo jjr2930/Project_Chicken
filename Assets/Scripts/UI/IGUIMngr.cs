@@ -4,7 +4,7 @@ using System.Collections;
 public class IGUIMngr : MonoSingle<IGUIMngr>
 {
     [SerializeField]
-    IGUIPointMngr _pointMngr;
+    IGUIPointMngr _pointMngr = null;
 
     protected override void OnInit()
     {
@@ -14,6 +14,7 @@ public class IGUIMngr : MonoSingle<IGUIMngr>
 
     void OnGUI()
     {
+        /*
         if (GUILayout.Button("reset"))
         {
             PlayerPrefs.SetInt(MACRO.KEY_CASH, 0);
@@ -21,6 +22,7 @@ public class IGUIMngr : MonoSingle<IGUIMngr>
 
             PlayerPrefs.Save();
         }
+        */
     }
 
    
