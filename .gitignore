@@ -14,3 +14,15 @@ obj/
 *.suo
 *.user
 *.sln.docstates
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-Editor-vs.csproj
+Assembly-CSharp-firstpass.csproj
+Assembly-CSharp-firstpass-vs.csproj
+Assembly-CSharp-vs.csproj
+Project_Chicken.sln
+Project_Chicken-csharp.sln
+UnityVS.Project_Chicken.CSharp.csproj
+UnityVS.Project_Chicken.CSharp.Editor.csproj
+UnityVS.Project_Chicken.CSharp.Plugins.csproj
+UnityVS.Project_Chicken.sln
