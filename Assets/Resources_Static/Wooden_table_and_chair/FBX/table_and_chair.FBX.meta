@@ -1,41 +1,33 @@
 fileFormatVersion: 2
-guid: 271292e6945d5ae4389e3a85ea79d75c
+guid: 648250201fabe574b8591ee45cddcf4a
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Chicken
-    100002: //RootNode
-    100004: Head
-    100006: LefLeg3
-    100008: LeftLeg1
-    100010: LeftLeg2
-    100012: Neck
-    100014: RightLeg1
-    100016: RightLeg2
-    100018: RightLeg3
-    100020: Spine1
-    100022: Spine2
-    100024: Tail
-    400000: Chicken
-    400002: //RootNode
-    400004: Head
-    400006: LefLeg3
-    400008: LeftLeg1
-    400010: LeftLeg2
-    400012: Neck
-    400014: RightLeg1
-    400016: RightLeg2
-    400018: RightLeg3
-    400020: Spine1
-    400022: Spine2
-    400024: Tail
-    4300000: Chicken
-    7400000: Take 001
+    100000: Object018
+    100002: Object022
+    100004: //RootNode
+    100006: chair
+    100008: table
+    400000: Object018
+    400002: Object022
+    400004: //RootNode
+    400006: chair
+    400008: table
+    2300000: Object018
+    2300002: Object022
+    2300004: chair
+    2300006: table
+    3300000: Object018
+    3300002: Object022
+    3300004: chair
+    3300006: table
+    4300000: Object018
+    4300002: Object022
+    4300004: table
+    4300006: chair
     9500000: //RootNode
-    11100000: //RootNode
-    13700000: Chicken
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -51,13 +43,13 @@ ModelImporter:
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
-    animationWrapMode: 2
+    animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .0900000036
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -91,7 +83,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 2
   additionalBone: 1
   userData: 
   assetBundleName: 
