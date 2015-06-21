@@ -912,7 +912,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 291535583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -426, y: 370, z: 0}
+  m_LocalPosition: {x: -426, y: 303, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1733290252}
@@ -1275,7 +1275,7 @@ Transform:
   m_GameObject: {fileID: 311081720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: .00256739417, y: .00256739417, z: .00256739417}
+  m_LocalScale: {x: .00309597515, y: .00309597515, z: .00309597515}
   m_Children:
   - {fileID: 31521464}
   - {fileID: 1301126460}
@@ -2337,7 +2337,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 117254, guid: 92f180bb14b578b4aa8b855c517aee32, type: 2}
       propertyPath: m_Name
-      value: Chicken 1 (1)
+      value: ColorChick
       objectReference: {fileID: 0}
     - target: {fileID: 13731610, guid: 92f180bb14b578b4aa8b855c517aee32, type: 2}
       propertyPath: m_Materials.Array.data[0]

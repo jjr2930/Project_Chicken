@@ -27,11 +27,8 @@ public class TestManager : MonoBehaviour {
             var tiles = tileRoot.GetComponentsInChildren<MeshRenderer>();
             //find rendom tile
             int rnd = Random.Range(0, tiles.Length);
-
             var selectedTile = tiles[rnd];
-
             IGEffectMngr.Instance.GenerateAxePosImg(selectedTile.transform.position, 2.0f);
-
             SoundManager.Instance.PlaySound("TargetPoint");
         }
 
