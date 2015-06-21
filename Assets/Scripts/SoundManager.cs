@@ -32,12 +32,14 @@ public class SoundManager : MonoSingle<SoundManager>
         var selectedClip = _bgmClip.Where(a => a.name == BGMName).ToArray()[0];
         if (null == selectedClip)
         {
-
+            Debug.Log("해당 사운드 클립을 찾을수 없어요 확인해주세요");
+            return;
         }
 
         if (null == _BGM)
         {
-            var BGM = MakeNewSoundObject(selectedClip, true);
+            _BGM = MakeNewSoundObject(selectedClip, true);
+            _BGM.name = "BGM";
         }
 
         _BGM.gameObject.SetActive(true);
@@ -45,30 +47,66 @@ public class SoundManager : MonoSingle<SoundManager>
 
     public void PlaySound(string name)
     {
-        var selected = _sounds.Where(a => a.name == name && a.gameObject.activeSelf == false).ToArray()[0];
-
+        var list = _sounds.Where(a => a.gameObject.activeSelf == false).ToArray();
+        SoundElement element = null;
+        AudioClip selectedClip = null;
         //없으면 만들어야지
-        if (null == selected)
+        if (0 == list.Length)
         {
-            var clip = _clipList.Where(a => a.name == name).ToArray()[0];
+            var clips = _clipList.Where(a => a.name == name).ToArray();
 
-            var newObj = MakeNewSoundObject(clip);
+            if (clips.Length <= 0)
+            {
+                Debug.LogError("해당 클립이 존재하지 않아요 확인해주세요");
+                return;
+            }
+
+            selectedClip = clips[0];
+
+            var newObj = MakeNewSoundObject(selectedClip);
 
             _sounds.Add(newObj);
 
-            selected = newObj;
+            element = newObj;
         }
 
-        var selectedClip = _clipList.Where(a => a.name == name).ToArray()[0];
+        //있다면 클립만 찾아주자
+        if(null == selectedClip)
+        {
+            var cliplist = _clipList.Where(a => a.name == name).ToArray();
+            if (null == cliplist)
+            {
+                Debug.LogError("해당 클립이 없어요 확인해 주세요");
+                return;
+            }
+            selectedClip = cliplist[0];
+            element = list[0];
+        }
 
-        selected.SetAudio(selectedClip);
+        element.SetAudio(selectedClip);
 
-        selected.gameObject.SetActive(true);
+        element.gameObject.SetActive(true);
     }
 
+    public void StopSound(string name)
+    {
+        var searchedList = _sounds.Where(a => a.Clip.name == name && a.gameObject.activeSelf == true).ToArray();
+        if (searchedList.Length <= 0)
+        {
+            Debug.LogError("해당이름의 사운드는 실행되고 있지 않습니다.");
+            return;
+        }
+
+        SoundElement stopNode = searchedList[0];
+
+        stopNode.gameObject.SetActive(false);
+
+    }
     public SoundElement MakeNewSoundObject(AudioClip clip, bool isBGM = false)
     {
         GameObject newObj = new GameObject("SoundElement");
+
+        newObj.SetActive(false);
 
         var script = newObj.AddComponent<SoundElement>();
 
@@ -79,6 +117,10 @@ public class SoundManager : MonoSingle<SoundManager>
 
     void Update()
     {
+        if (_sounds.Count <= 0)
+        {
+            return;
+        }
         if (Time.time - _fStartTime >= _fCheckIntervalTime)
         {
             int count = 0;
@@ -89,9 +131,15 @@ public class SoundManager : MonoSingle<SoundManager>
                 {
                     var oldNode = selectedNode;
                     _sounds.RemoveAt(_iCheckedLastIndex);
-                    Destroy(oldNode);
+                    Destroy(oldNode.gameObject);
                 }
                 count++;
+                if (_sounds.Count == 0)
+                {
+                    _iCheckedLastIndex = 0;
+                    Debug.Log("have not element");
+                    return;
+                }
                 _iCheckedLastIndex = (_iCheckedLastIndex + 1) % _sounds.Count;
             }
         }

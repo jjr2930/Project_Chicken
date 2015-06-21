@@ -8,13 +8,14 @@ using UnityEngine;
 /// </summary>
 public class SoundElement : MonoBehaviour
 {
-    private AudioClip _clip = null;       //soiurce
+    public AudioClip Clip { get; set; }       //soiurce
     private AudioSource _audioPlayer = null;    //player
     public float DeactivateTime    { set; get; }
 
 
     public void SetAudio(AudioClip clip, bool IsBGM = false)
     {
+        Debug.Log("setauido");
         _audioPlayer = this.GetComponent<AudioSource>();
         if (null == _audioPlayer)
         {
@@ -26,18 +27,16 @@ public class SoundElement : MonoBehaviour
             _audioPlayer.loop = true;
         }
 
-        _clip = clip;
-        _audioPlayer.clip = _clip;
+        Clip = clip;
+        _audioPlayer.clip = Clip;
     }
-
-    public void Awake()
+    void Awake()
     {
-        this.name = _clip.name;
+        DeactivateTime = Time.time;
     }
 
     void OnEnable()
     {
-
         _audioPlayer.Play();
     }
 

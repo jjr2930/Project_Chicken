@@ -201,14 +201,13 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\Scripts\AGEffectMngr.cs" />
      <Compile Include="Assets\Scripts\AnimationController.cs" />
      <Compile Include="Assets\Scripts\Axe.cs" />
      <Compile Include="Assets\Scripts\AxePosImg.cs" />
      <Compile Include="Assets\Scripts\Bounce.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\DataType\Enum_Sound.cs" />
      <Compile Include="Assets\Scripts\DeviceController.cs" />
+     <Compile Include="Assets\Scripts\IGEffectMngr.cs" />
      <Compile Include="Assets\Scripts\Lib\MonoSingle.cs" />
      <Compile Include="Assets\Scripts\Lib\SecurePlayerPref.cs" />
      <Compile Include="Assets\Scripts\MACRO.cs" />
@@ -216,6 +215,7 @@
      <Compile Include="Assets\Scripts\PlayerData.cs" />
      <Compile Include="Assets\Scripts\SoundElement.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\TestManager.cs" />
      <Compile Include="Assets\Scripts\UI\IGUIMngr.cs" />
      <Compile Include="Assets\Scripts\UI\IGUIPointMngr.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />

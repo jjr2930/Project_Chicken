@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AGEffectMngr : MonoSingle<AGEffectMngr> {
+public class IGEffectMngr : MonoSingle<IGEffectMngr> {
     [SerializeField]
     private Vector3 _axeEndScale = new Vector3(5.0f, 5.0f, 5.0f);
 
@@ -35,6 +35,7 @@ public class AGEffectMngr : MonoSingle<AGEffectMngr> {
     public void StartAxeAtkEffect(Vector3 position, float duration)
     {
         var obj = Instantiate(_axeEffect, position, Quaternion.Euler(-90.0f,0.0f,0.0f)) as GameObject;
+        SoundManager.Instance.PlaySound("Attack");
         Destroy(obj, duration);        
     }
     /// <summary>
@@ -42,17 +43,8 @@ public class AGEffectMngr : MonoSingle<AGEffectMngr> {
     /// </summary>
     void OnGUI()
     {
-        if (GUILayout.Button("action Start"))
-        {
-            var tileRoot = GameObject.Find("GroundTile(Clone)");
-            var tiles = tileRoot.GetComponentsInChildren<MeshRenderer>();
-            //find rendom tile
-            int rnd = Random.Range(0, tiles.Length);
-
-            var selectedTile = tiles[rnd];
-            
-            GenerateAxePosImg(selectedTile.transform.position, 2.0f);
-        }
+       
+        
     }
 
     #region help method
@@ -69,6 +61,7 @@ public class AGEffectMngr : MonoSingle<AGEffectMngr> {
         }
         //1.0f is dummy value
         Destroy(go);
+        SoundManager.Instance.StopSound("TargetPoint");
         StartAxeAtkAction(go.transform.position + new Vector3(0, 1.06f, 2.6f),0.2f);
     }
 
