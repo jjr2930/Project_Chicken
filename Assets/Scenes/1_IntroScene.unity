@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 182607573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00309597515, y: .00309597515, z: .00309597515}
+  m_LocalScale: {x: .00256739417, y: .00256739417, z: .00256739417}
   m_Children:
   - {fileID: 938113771}
   - {fileID: 983336294}
@@ -269,7 +269,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 0}
+  mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 100
   mHeight: 100
@@ -463,7 +463,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3001
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -585,7 +585,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: .203921586, g: .247058839, b: .309803933, a: .0196078438}
+  m_BackGroundColor: {r: .203921586, g: .239215702, b: .301960796, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
